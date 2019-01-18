@@ -1,13 +1,20 @@
-#ifndef L154267_H
-#define L154267_H
-#include "chessPlayer.h"
-#include "ENUM.h"
+#ifndef CHESS_H
+#define CHESS_H
 
-class L154267 : public chessPlayer {
-public:
-	L154267(Color playerColor = White);
-	void decideMove(const gameState* state, action* Move, int maxDepth);
+#include "gameState.h"
+#include "chessPlayer.h"
+#include "UI.h"
+
+class chess{
+    public:
+        gameState* G;
+        chessPlayer *Players[2];
+        UI* Interface;
+
+        chess();
+        bool gameOver();
+        void playGame();
 };
 
 
-#endif // AUTOPLAYER_H
+#endif // CHESS_H
